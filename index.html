@@ -8,7 +8,7 @@
         >
         <meta property="og:title" content="8ightThreads">
         <meta property="og:description" content="Wear Your Identity">
-        <link rel="icon" href="favicon.ico" sizes="any">
+        <meta property="og:image" content="8ightthreads%20logo%20circle%20background.png">
         <meta property="og:type" content="website">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -27,7 +27,7 @@
         Learn how to configure a non-root public URL by running `npm run build`.
         -->
         <title>8ightThreads | Wear Your Identity</title>
-        <link rel="icon" type="image/png" href="8ightthreads%20logo%20circle%20background.png">
+        <link rel="icon" href="favicon.ico" sizes="any">
         <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
 <style>@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap);</style><style>*, ::before, ::after{
   --tw-border-spacing-x: 0;
@@ -3538,8 +3538,21 @@ button:focus-visible, a:focus-visible {
     transition: color 300ms ease, background-color 300ms ease, border-color 300ms ease, backdrop-filter 300ms ease;
   }
 
+  /* Keep the navigation full-width, like the reference layout. */
+  [data-testid="site-nav"] > div:first-child {
+    width: 100%;
+    max-width: none;
+  }
+
   [data-testid="site-nav"] .nav-link {
     color: #f5f1e8 !important;
+    white-space: nowrap;
+  }
+
+  [data-testid="site-nav"]:not(.is-scrolled) {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    backdrop-filter: none !important;
   }
 
   [data-testid="site-nav"] [data-testid="nav-logo"] img {
@@ -3573,11 +3586,14 @@ button:focus-visible, a:focus-visible {
     if (!nav) return;
 
     function updateNavigationColor() {
-      nav.classList.toggle('is-scrolled', window.scrollY > 40);
+      nav.classList.toggle('is-scrolled', window.scrollY > 120);
     }
 
     updateNavigationColor();
     window.addEventListener('scroll', updateNavigationColor, { passive: true });
+    window.addEventListener('load', updateNavigationColor);
+    window.addEventListener('pageshow', updateNavigationColor);
+    requestAnimationFrame(updateNavigationColor);
   }());
 </script>
 <script>
@@ -3631,3 +3647,4 @@ button:focus-visible, a:focus-visible {
   }());
 </script>
 <span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span></body></html>
+
