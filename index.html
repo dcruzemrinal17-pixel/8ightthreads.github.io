@@ -16,9 +16,9 @@
   <title>8ightThreads | Wear Your Identity</title>
 
   <!-- Favicon links: PNG (modern) + shortcut for legacy browsers + apple touch -->
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="shortcut icon" href="/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="/favicon.png">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="shortcut icon" href="./favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="./favicon.png">
 
   <link rel="stylesheet" href="/style.css">
   
@@ -32,7 +32,7 @@
         >
         <meta property="og:title" content="8ightThreads">
         <meta property="og:description" content="Wear Your Identity">
-        <meta property="og:image" content="8ightthreads%20logo%20circle%20background.png">
+        <meta property="og:image" content="./favicon.png">
         <meta property="og:type" content="website">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -51,7 +51,7 @@
         Learn how to configure a non-root public URL by running `npm run build`.
         -->
         <title>8ightThreads | Wear Your Identity</title>
-        <link rel="icon" href="favicon.ico" sizes="any">
+        <link rel="icon" type="image/png" href="./favicon.png">
         <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
 <style>@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap);</style><style>*, ::before, ::after{
   --tw-border-spacing-x: 0;
@@ -3620,6 +3620,27 @@ button:focus-visible, a:focus-visible {
     requestAnimationFrame(updateNavigationColor);
   }());
 </script>
+<style id="navigation-alignment">
+  /* Keep the menu visually centered even though the logo and icon groups have
+     different widths. This matches the balanced three-part header layout. */
+  @media (min-width: 1280px) {
+    [data-testid="site-nav"] > div:first-child {
+      display: grid !important;
+      grid-template-columns: minmax(220px, 1fr) auto minmax(220px, 1fr);
+      column-gap: 2rem;
+    }
+
+    [data-testid="site-nav"] > div:first-child > nav {
+      grid-column: 2;
+      justify-self: center;
+    }
+
+    [data-testid="site-nav"] > div:first-child > div:last-child {
+      grid-column: 3;
+      justify-self: end;
+    }
+  }
+</style>
 <script>
   (function () {
     var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
