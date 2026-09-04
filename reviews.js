@@ -5,57 +5,49 @@ const indianCustomerReviews = [
         name: "Arjun Sharma",
         location: "Mumbai, Maharashtra",
         rating: 5,
-        review: "Absolutely love the quality! The oversized tees fit perfectly and the fabric is so comfortable. Best streetwear brand in India! 🔥",
-        avatar: "AS"
+        review: "Absolutely love the quality! The oversized tees fit perfectly and the fabric is so comfortable. Best streetwear brand in India! 🔥"
     },
     {
         name: "Priya Verma",
         location: "Delhi, Delhi",
         rating: 5,
-        review: "The hoodies are insanely good. Perfect for winters and the design is so unique. Will definitely order again!",
-        avatar: "PV"
+        review: "The hoodies are insanely good. Perfect for winters and the design is so unique. Will definitely order again!"
     },
     {
         name: "Rahul Patel",
         location: "Bangalore, Karnataka",
         rating: 5,
-        review: "Great quality, fast delivery, and amazing customer service. 8ightThreads is my go-to for streetwear now.",
-        avatar: "RP"
+        review: "Great quality, fast delivery, and amazing customer service. 8ightThreads is my go-to for streetwear now."
     },
     {
         name: "Anjali Singh",
         location: "Pune, Maharashtra",
         rating: 5,
-        review: "The sweatpants are so cozy! Been wearing them every day. Love the minimalist design. Highly recommend! ✨",
-        avatar: "AS"
+        review: "The sweatpants are so cozy! Been wearing them every day. Love the minimalist design. Highly recommend! ✨"
     },
     {
         name: "Vivek Kumar",
         location: "Hyderabad, Telangana",
         rating: 5,
-        review: "Finally found a brand that understands Indian style. The quality is premium and prices are fair. Keep it up!",
-        avatar: "VK"
+        review: "Finally found a brand that understands Indian style. The quality is premium and prices are fair. Keep it up!"
     },
     {
         name: "Neha Gupta",
         location: "Jaipur, Rajasthan",
         rating: 5,
-        review: "Ordered the jacket and I'm obsessed! The fit is perfect and it looks so good. Worth every penny. 💯",
-        avatar: "NG"
+        review: "Ordered the jacket and I'm obsessed! The fit is perfect and it looks so good. Worth every penny. 💯"
     },
     {
         name: "Aditya Reddy",
         location: "Kolkata, West Bengal",
         rating: 5,
-        review: "8ightThreads is setting new standards for Indian streetwear. The accessories are fire too!",
-        avatar: "AR"
+        review: "8ightThreads is setting new standards for Indian streetwear. The accessories are fire too!"
     },
     {
         name: "Simran Kaur",
         location: "Chandigarh, Punjab",
         rating: 5,
-        review: "Amazing quality and designs! Wearing my 8ightThreads gear everywhere. Everyone asks where I got it from! 🔥",
-        avatar: "SK"
+        review: "Amazing quality and designs! Wearing my 8ightThreads gear everywhere. Everyone asks where I got it from! 🔥"
     }
 ];
 
