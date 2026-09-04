@@ -3661,4 +3661,27 @@ button:focus-visible, a:focus-visible {
   <script src="/script.js"></script>
   <script src="/content-manager.js"></script>
   <script src="/reviews.js"></script>
+  
+  <!-- Voices Section - Customer Reviews Carousel -->
+  <section style="background: #0b0b0b; padding: 80px 20px; border-top: 1px solid #222;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <div style="text-align: left; margin-bottom: 30px;">
+          <div style="text-align: center; color: #888; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">03 — Voices</div>
+          <h2 style="font-size: 48px; font-weight: 700; color: #fff; font-family: 'Poppins', sans-serif; text-align: center;">What Our Customers Say</h2>
+        </div>
+      </div>
+
+      <div style="position: relative; background: #161616; border-radius: 20px; padding: 60px 40px; border: 1px solid #222;">
+        <!-- Reviews Container -->
+        <div data-reviews-container style="min-height: 250px;"></div>
+
+        <!-- Navigation Buttons -->
+        <div style="display: flex; gap: 20px; justify-content: center; margin-top: 40px;">
+          <button onclick="prevReview()" style="background: #333; border: 2px solid #444; color: #fff; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: all 0.3s; font-weight: bold;">←</button>
+          <button onclick="nextReview()" style="background: #3b82f6; border: 2px solid #3b82f6; color: #fff; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: all 0.3s; font-weight: bold;">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
