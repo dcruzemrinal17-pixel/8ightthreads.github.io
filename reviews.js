@@ -56,6 +56,88 @@ let reviewAutoSlideTimer;
 
 function initReviews() {
     const reviewsContainer = document.querySelector('[data-reviews-container]');
+    if (!reviewsContainer) {
+        // Try to find and replace voices section content
+        replaceVoicesSection();
+    } else {
+        renderReviewSlider();
+        startAutoSlide();
+    }
+
+    // Resume auto-slide on mouse leave
+    document.addEventListener('mouseleave', startAutoSlide);
+}
+
+function replaceVoicesSection() {
+    // Find any element that might contain the voices testimonial
+    const allText = document.body.innerText;
+    if (allText.includes('monolith') || allText.includes('cream tee')) {
+        // Create a container if it doesn't exist
+        const voicesSection = document.createElement('div');
+        voicesSection.setAttribute('data-reviews-container', '');
+        
+        // Try to append to an existing section or create one
+        const mainSection = document.querySelector('main') || document.querySelector('.container') || document.body;
+        if (mainSection) {
+            mainSection.appendChild(voicesSection);
+        }
+        renderReviewSlider();
+        startAutoSlide();
+    }
+}
+
+function renderReviewSlider() {
+    const container = document.querySelector('[data-reviews-container]');
+    if (!container) return;
+
+    const review = indianCustomerReviews[currentReviewIndex];
+    
+    container.innerHTML = `
+        <div class="review-card fade-in" style="padding:20px; background:#161616; border-radius:12px; border:1px solid #222;">
+            <div class="review-header" style="display:flex; align-items:center; gap:15px; margin-bottom:20px;">
+                <div class="review-avatar" style="width:60px; height:60px; background:linear-gradient(135deg, #3b82f6, #1e3a8a); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:18px;">${review.name.split(' ').map(n => n[0]).join('')}</div>
+                <div class="review-info">
+                    <div class="review-name" style="font-weight:600; color:#fff; font-size:16px;">${review.name}</div>
+                    <div class="review-location" style="color:#888; font-size:12px;">📍 ${review.location}</div>
+                </div>
+            </div>
+            <div class="review-rating" style="font-size:18px; margin-bottom:15px; letter-spacing:2px;">
+                ${'⭐'.repeat(review.rating)}
+            </div>
+            <div class="review-text" style="color:#bbb; font-size:16px; line-height:1.6; font-style:italic;">"${review.review}"</div>
+        </div>
+    `;
+}
+
+function startAutoSlide() {
+    clearInterval(reviewAutoSlideTimer);
+    reviewAutoSlideTimer = setInterval(() => {
+        currentReviewIndex = (currentReviewIndex + 1) % indianCustomerReviews.length;
+        renderReviewSlider();
+    }, 5000); // Change review every 5 seconds
+}
+
+function nextReview() {
+    currentReviewIndex = (currentReviewIndex + 1) % indianCustomerReviews.length;
+    renderReviewSlider();
+    clearInterval(reviewAutoSlideTimer);
+    startAutoSlide();
+}
+
+function prevReview() {
+    currentReviewIndex = (currentReviewIndex - 1 + indianCustomerReviews.length) % indianCustomerReviews.length;
+    renderReviewSlider();
+    clearInterval(reviewAutoSlideTimer);
+    startAutoSlide();
+}
+
+document.addEventListener('DOMContentLoaded', initReviews);
+
+let currentReviewIndex = 0;
+let reviewAutoSlideTimer;
+
+function initReviews() {
+    const reviewsContainer = document.querySelector('[data-reviews-container]');
     if (!reviewsContainer) return;
 
     renderReviewSlider();
