@@ -3660,4 +3660,112 @@ button:focus-visible, a:focus-visible {
   <!-- Content is unchanged below --><!-- trimmed for brevity in this commit -->
   <script src="/script.js"></script>
   <script src="/content-manager.js"></script>
+  <script src="/reviews.js"></script>
+  
+  <!-- Customer Reviews Section -->
+  <section style="background: #0b0b0b; padding: 80px 20px; border-top: 1px solid #222;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h2 style="font-size: 42px; font-weight: 700; color: #fff; margin-bottom: 15px; font-family: 'Poppins', sans-serif;">What Our Customers Love</h2>
+        <p style="color: #888; font-size: 16px; font-family: 'Poppins', sans-serif;">Real reviews from real Indian customers</p>
+      </div>
+
+      <div style="position: relative; background: #161616; border-radius: 20px; padding: 40px; border: 1px solid #222;">
+        <!-- Reviews Container -->
+        <div data-reviews-container></div>
+
+        <!-- Navigation Buttons -->
+        <div style="display: flex; gap: 20px; justify-content: center; margin-top: 40px;">
+          <button onclick="prevReview()" style="background: #333; border: 1px solid #444; color: #fff; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 20px; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">← Prev</button>
+          <button onclick="nextReview()" style="background: #3b82f6; border: 1px solid #3b82f6; color: #fff; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 20px; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">Next →</button>
+        </div>
+
+        <!-- Indicators -->
+        <div style="display: flex; gap: 8px; justify-content: center; margin-top: 20px; flex-wrap: wrap;">
+          <span style="color: #888; font-size: 12px; font-family: 'Poppins', sans-serif;">Tap next to explore reviews • Auto-rotating every 5 seconds</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .review-card {
+      animation: fadeInSlide 0.5s ease-in-out;
+    }
+
+    .fade-in {
+      animation: fadeInSlide 0.5s ease-in-out;
+    }
+
+    @keyframes fadeInSlide {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .review-avatar {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .review-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .review-name {
+      font-weight: 600;
+      color: #fff;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .review-location {
+      color: #888;
+      font-size: 12px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .review-rating {
+      font-size: 18px;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+
+    .review-text {
+      color: #bbb;
+      font-size: 16px;
+      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
+      font-style: italic;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #3b82f6 !important;
+      color: #fff !important;
+    }
+  </style>
 </body>
